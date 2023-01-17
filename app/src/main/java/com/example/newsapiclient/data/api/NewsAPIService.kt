@@ -23,4 +23,3 @@ interface NewsAPIService {
         apiKey: String = BuildConfig.API_KEY
     ): Response<APIResponse>
 }
-//this is test

@@ -1,7 +1,7 @@
 package com.example.newapiclient.presentation.di
 
 
-import com.example.newapiclient.data.api.NewsAPIService
+import com.example.newsapiclient.data.api.NewsAPIService
 import com.example.newsapiclient.BuildConfig
 import dagger.Module
 import dagger.Provides

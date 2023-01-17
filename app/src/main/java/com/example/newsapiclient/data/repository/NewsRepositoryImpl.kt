@@ -1,10 +1,10 @@
-package com.example.newapiclient.data.repository
+package com.example.newsapiclient.data.repository
 
-import com.example.newapiclient.data.model.APIResponse
-import com.example.newapiclient.data.model.Article
-import com.example.newapiclient.data.repository.dataSource.NewsRemoteDataSource
-import com.example.newapiclient.data.util.Resource
-import com.example.newapiclient.domain.repository.NewsRepository
+import com.example.newsapiclient.data.model.APIResponse
+import com.example.newsapiclient.data.model.Article
+import com.example.newsapiclient.data.repository.dataSource.NewsRemoteDataSource
+import com.example.newsapiclient.data.util.Resource
+import com.example.newsapiclient.domain.repository.NewsRepository
 
 import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
@@ -23,6 +23,7 @@ class NewsRepositoryImpl(
     }
 
     override suspend fun getNewsHeadlines(country: String, page : Int): Resource<APIResponse> {
+
         return responseToResource(remoteDataSource.getTopHeadlines(country,page))
     }
     override suspend fun getSearchedNews(searchQuery: String): Resource<APIResponse> {

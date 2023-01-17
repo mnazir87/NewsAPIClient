@@ -1,8 +1,8 @@
-package com.example.newapiclient.presentation.di
+package com.example.newsapiclient.presentation.di
 
 import android.app.Application
-import com.example.newapiclient.domain.usecase.GetNewsHeadlines
-import com.example.newapiclient.presentation.viewmodel.NewsViewModelFactory
+import com.example.newsapiclient.domain.usecase.GetNewsHeadlines
+import com.example.newsapiclient.presentation.viewmodel.NewsViewModelFactory
 
 import dagger.Module
 import dagger.Provides

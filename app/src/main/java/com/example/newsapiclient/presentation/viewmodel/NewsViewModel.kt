@@ -1,4 +1,4 @@
-package com.example.newapiclient.presentation.viewmodel
+package com.example.newsapiclient.presentation.viewmodel
 
 import android.app.Application
 import android.content.Context
@@ -10,9 +10,9 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 
 import androidx.lifecycle.viewModelScope
-import com.example.newapiclient.data.model.APIResponse
-import com.example.newapiclient.data.util.Resource
-import com.example.newapiclient.domain.usecase.GetNewsHeadlines
+import com.example.newsapiclient.data.model.APIResponse
+import com.example.newsapiclient.data.util.Resource
+import com.example.newsapiclient.domain.usecase.GetNewsHeadlines
 
 
 import kotlinx.coroutines.Dispatchers

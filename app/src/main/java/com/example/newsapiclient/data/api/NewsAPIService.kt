@@ -1,11 +1,11 @@
-package com.example.newapiclient.data.api
+package com.example.newsapiclient.data.api
 
 
 
 
 
 
-import com.example.newapiclient.data.model.APIResponse
+import com.example.newsapiclient.data.model.APIResponse
 import com.example.newsapiclient.BuildConfig
 
 import retrofit2.Response
@@ -23,3 +23,4 @@ interface NewsAPIService {
         apiKey: String = BuildConfig.API_KEY
     ): Response<APIResponse>
 }
+//this is test

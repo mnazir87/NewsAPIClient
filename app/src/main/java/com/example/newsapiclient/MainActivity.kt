@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.example.newapiclient.presentation.viewmodel.NewsViewModel
-import com.example.newapiclient.presentation.viewmodel.NewsViewModelFactory
+import com.example.newsapiclient.presentation.viewmodel.NewsViewModel
+import com.example.newsapiclient.presentation.viewmodel.NewsViewModelFactory
 import com.example.newsapiclient.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject

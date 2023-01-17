@@ -1,9 +1,9 @@
-package com.example.newapiclient.domain.repository
+package com.example.newsapiclient.domain.repository
 
 
-import com.example.newapiclient.data.model.APIResponse
-import com.example.newapiclient.data.model.Article
-import com.example.newapiclient.data.util.Resource
+import com.example.newsapiclient.data.model.APIResponse
+import com.example.newsapiclient.data.model.Article
+import com.example.newsapiclient.data.util.Resource
 import kotlinx.coroutines.flow.Flow
 
 interface NewsRepository {

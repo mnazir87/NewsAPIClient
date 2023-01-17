@@ -1,4 +1,4 @@
-package com.example.newapiclient.data.util
+package com.example.newsapiclient.data.util
 
 sealed class Resource<T>(
     val data: T? = null,

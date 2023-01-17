@@ -1,4 +1,4 @@
-package com.example.newapiclient.data.model
+package com.example.newsapiclient.data.model
 
 
 

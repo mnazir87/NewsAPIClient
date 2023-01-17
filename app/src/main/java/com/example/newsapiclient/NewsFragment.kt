@@ -7,11 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.newapiclient.presentation.viewmodel.NewsViewModel
+import com.example.newsapiclient.presentation.viewmodel.NewsViewModel
 
-import com.example.newsapicl4.presentation.adapter.NewsAdapter
+import com.example.newsapiclient.presentation.adapter.NewsAdapter
 import com.example.newsapiclient.databinding.FragmentNewsBinding
 
 
@@ -21,19 +20,13 @@ class NewsFragment : Fragment() {
     private lateinit var newsAdapter: NewsAdapter
     private var country = "us"
     private var page = 1
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        fragmentNewsBinding = FragmentNewsBinding.bind(requireView())
-        viewModel = (activity as MainActivity).viewModel
-        initRecyclerView()
-        viewNewsList()
-    }
+
 
     private fun viewNewsList() {
         viewModel.getNewsHeadLines(country,page)
         viewModel.newsHeadlines.observe(viewLifecycleOwner) { response ->
             when (response) {
-                is com.example.newapiclient.data.util.Resource.Success -> {
+                is com.example.newsapiclient.data.util.Resource.Success -> {
 
                     hideProgressBar()
                     response.data?.let {
@@ -41,7 +34,7 @@ class NewsFragment : Fragment() {
                         newsAdapter.differ.submitList(it.articles.toList())
                     }
                 }
-                is com.example.newapiclient.data.util.Resource.Error -> {
+                is com.example.newsapiclient.data.util.Resource.Error -> {
                     hideProgressBar()
                     response.message?.let {
                         Toast.makeText(activity, "An error occurred : $it", Toast.LENGTH_LONG)
@@ -49,12 +42,20 @@ class NewsFragment : Fragment() {
                     }
                 }
 
-                is com.example.newapiclient.data.util.Resource.Loading -> {
+                is com.example.newsapiclient.data.util.Resource.Loading -> {
                     showProgressBar()
                 }
 
             }
         }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        fragmentNewsBinding = FragmentNewsBinding.bind(view)
+        viewModel = (activity as MainActivity).viewModel
+        initRecyclerView()
+        viewNewsList()
     }
 
     private fun initRecyclerView() {

@@ -1,7 +1,7 @@
-package com.example.newapiclient.presentation.di
+package com.example.newsapiclient.presentation.di
 
-import com.example.newapiclient.domain.repository.NewsRepository
-import com.example.newapiclient.domain.usecase.GetNewsHeadlines
+import com.example.newsapiclient.domain.repository.NewsRepository
+import com.example.newsapiclient.domain.usecase.GetNewsHeadlines
 
 import dagger.Module
 import dagger.Provides

@@ -1,10 +1,10 @@
-package com.example.newapiclient.presentation.di
+package com.example.newsapiclient.presentation.di
 
 
 
-import com.example.newapiclient.data.api.NewsAPIService
-import com.example.newapiclient.data.repository.dataSource.NewsRemoteDataSource
-import com.example.newapiclient.data.repository.dataSourceImpl.NewsRemoteDataSourceImpl
+import com.example.newsapiclient.data.api.NewsAPIService
+import com.example.newsapiclient.data.repository.dataSource.NewsRemoteDataSource
+import com.example.newsapiclient.data.repository.dataSourceImpl.NewsRemoteDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

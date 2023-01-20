@@ -73,7 +73,7 @@ class NewsFragment : Fragment() {
         fragmentNewsBinding = FragmentNewsBinding.bind(view)
         viewModel = (activity as MainActivity).viewModel
         newsAdapter = (activity as MainActivity).newsAdapter
-        newsAdapter.mySetOnItemClickListener {
+        newsAdapter.setOnItemClickListener {
             var bundle = Bundle().apply {
                 putSerializable("selected_article", it)
             }

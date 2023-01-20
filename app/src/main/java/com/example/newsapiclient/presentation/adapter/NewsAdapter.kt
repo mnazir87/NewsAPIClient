@@ -63,7 +63,7 @@ class NewsAdapter: RecyclerView.Adapter<NewsAdapter.NewsViewHolder>(){
 
     private var onItemClickListener : ((Article) -> Unit)? = null
 
-    fun mySetOnItemClickListener(listener : (Article) -> Unit){
+    fun setOnItemClickListener(listener : (Article) -> Unit){
         onItemClickListener = listener
         Log.i("MYTAG", "inside my set onitemcliccklistener")
     }

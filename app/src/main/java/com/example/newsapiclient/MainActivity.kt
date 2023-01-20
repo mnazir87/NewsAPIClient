@@ -8,11 +8,14 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.newsapiclient.presentation.viewmodel.NewsViewModel
 import com.example.newsapiclient.presentation.viewmodel.NewsViewModelFactory
 import com.example.newsapiclient.databinding.ActivityMainBinding
+import com.example.newsapiclient.presentation.adapter.NewsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+    @Inject
+    lateinit var newsAdapter: NewsAdapter
     @Inject
     lateinit var factory: NewsViewModelFactory
     lateinit var viewModel: NewsViewModel

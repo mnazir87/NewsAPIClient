@@ -1,5 +1,6 @@
 package com.example.newsapiclient.presentation.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -20,9 +21,18 @@ class NewsAdapter: RecyclerView.Adapter<NewsAdapter.NewsViewHolder>(){
             binding.tvPublishedAt.text = article.publishedAt
             binding.tvSource.text = article.source.name
 
-            Glide.with(binding.ivArticleImage.context).
-            load(article.urlToImage).
-            into(binding.ivArticleImage)
+            Glide.with(binding.ivArticleImage.context)
+                .load(article.urlToImage)
+                .into(binding.ivArticleImage)
+
+            binding.root.setOnClickListener  {
+
+                onItemClickListener?.let {
+                    Log.i("MYTAG", "**********INSIDE ON CLICK LISTENER CLICKED")
+                    it(article)
+                }
+                Log.i("MYTAG", "ON CLICK LISTENER CLICKED")
+            }
         }
     }
     private val callback = object : DiffUtil.ItemCallback<Article>(){
@@ -49,5 +59,12 @@ class NewsAdapter: RecyclerView.Adapter<NewsAdapter.NewsViewHolder>(){
 
     override fun getItemCount(): Int {
         return differ.currentList.size
+    }
+
+    private var onItemClickListener : ((Article) -> Unit)? = null
+
+    fun mySetOnItemClickListener(listener : (Article) -> Unit){
+        onItemClickListener = listener
+        Log.i("MYTAG", "inside my set onitemcliccklistener")
     }
 }
